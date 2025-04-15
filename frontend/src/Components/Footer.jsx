@@ -1,19 +1,28 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin, FaMapMarkerAlt, FaPhone, FaEnvelope, FaArrowRight } from 'react-icons/fa';
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import {
+  FaFacebook,
+  FaTwitter,
+  FaInstagram,
+  FaLinkedin,
+  FaMapMarkerAlt,
+  FaPhone,
+  FaEnvelope,
+  FaArrowRight,
+} from "react-icons/fa";
 
 const Footer = () => {
-  const [email, setEmail] = useState('');
+  const [email, setEmail] = useState("");
 
   const handleSubscribe = (e) => {
     e.preventDefault();
-    setEmail('');
+    setEmail("");
   };
 
   return (
     <footer className="relative bg-gradient-to-b from-gray-900 via-black to-black text-white py-24 overflow-hidden">
       <div className="absolute inset-0 bg-[url('/grid.svg')] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]"></div>
-      
+
       <div className="relative max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-16">
           {/* About Section */}
@@ -22,20 +31,26 @@ const Footer = () => {
               About Us
             </h3>
             <p className="text-gray-300 text-center leading-relaxed">
-              Your trusted partner in power solutions. Providing quality batteries and exceptional service since 1995.
+              Your trusted partner in power solutions. Providing quality
+              batteries and exceptional service since 1995.
             </p>
             <div className="flex items-center justify-center md:justify-start space-x-4">
-              {[FaFacebook, FaTwitter, FaInstagram, FaLinkedin].map((Icon, index) => (
-                <a
-                  key={index}
-                  href="https://www.example.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-12 h-12 rounded-full bg-gray-800/50 flex items-center justify-center hover:bg-red-500 transition-all duration-300 group hover:scale-110"
-                >
-                  <Icon className="text-gray-400 group-hover:text-white transition-colors" size={22} />
-                </a>
-              ))}
+              {[FaFacebook, FaTwitter, FaInstagram, FaLinkedin].map(
+                (Icon, index) => (
+                  <a
+                    key={index}
+                    href="https://www.example.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-12 h-12 rounded-full bg-gray-800/50 flex items-center justify-center hover:bg-red-500 transition-all duration-300 group hover:scale-110"
+                  >
+                    <Icon
+                      className="text-gray-400 group-hover:text-white transition-colors"
+                      size={22}
+                    />
+                  </a>
+                )
+              )}
             </div>
           </div>
 
@@ -45,10 +60,10 @@ const Footer = () => {
               Quick Links
             </h3>
             <ul className="space-y-4">
-              {['Home', 'Products', 'About', 'Contact'].map((item) => (
+              {["Home", "Products", "About", "Contact"].map((item) => (
                 <li key={item}>
-                  <Link 
-                    to={`/${item.toLowerCase()}`} 
+                  <Link
+                    to={`/${item.toLowerCase()}`}
                     className="group inline-flex items-center text-gray-300 hover:text-red-500 transition-all duration-300"
                   >
                     <span className="w-0 group-hover:w-6 transition-all duration-300 overflow-hidden">
@@ -68,15 +83,26 @@ const Footer = () => {
             </h3>
             <ul className="space-y-6">
               {[
-                { Icon: FaMapMarkerAlt, text: 'Goushiya complex sindagi dist bijapur' },
-                { Icon: FaPhone, text: '+91 95351 11427 ,  9945664021 ' },
-                { Icon: FaEnvelope, text: 'hindustanbatterysindagi@gmail.com' }
+                {
+                  Icon: FaMapMarkerAlt,
+                  text: "Goushiya complex sindagi dist bijapur",
+                },
+                { Icon: FaPhone, text: "+91 95351 11427 ,  9945664021 " },
+                { Icon: FaEnvelope, text: "hindustanbatterysindagi@gmail.com" },
               ].map((item, index) => (
-                <li key={index} className="flex items-center space-x-4 group justify-center md:justify-start">
+                <li
+                  key={index}
+                  className="flex items-center space-x-4 group justify-center md:justify-start"
+                >
                   <div className="w-12 h-12 rounded-full bg-gray-800/50 flex items-center justify-center group-hover:bg-red-500 transition-all duration-300">
-                    <item.Icon className="text-gray-400 group-hover:text-white transition-colors" size={22} />
+                    <item.Icon
+                      className="text-gray-400 group-hover:text-white transition-colors"
+                      size={22}
+                    />
                   </div>
-                  <span className="text-gray-300 group-hover:text-white transition-colors">{item.text}</span>
+                  <span className="text-gray-300 group-hover:text-white transition-colors">
+                    {item.text}
+                  </span>
                 </li>
               ))}
             </ul>
@@ -87,7 +113,9 @@ const Footer = () => {
             <h3 className="text-2xl font-bold bg-gradient-to-r from-red-500 to-red-700 bg-clip-text text-transparent">
               Newsletter
             </h3>
-            <p className="text-gray-300">Stay updated with our latest offers and updates.</p>
+            <p className="text-gray-300">
+              Stay updated with our latest offers and updates
+            </p>
             <form onSubmit={handleSubscribe} className="space-y-4">
               <div className="relative group">
                 <input
@@ -111,12 +139,14 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="mt-16 pt-8 border-t border-gray-800/50">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            <p className="text-gray-400 text-center md:text-left">&copy; 2024 Battery Store. All rights reserved.</p>
+            <p className="text-gray-400 text-center md:text-left">
+              &copy; 2024 Battery Store. All rights reserved.
+            </p>
             <div className="flex space-x-8">
-              {['Privacy Policy', 'Terms of Service'].map((item) => (
+              {["Privacy Policy", "Terms of Service"].map((item) => (
                 <Link
                   key={item}
-                  to={`/${item.toLowerCase().replace(/\s+/g, '-')}`}
+                  to={`/${item.toLowerCase().replace(/\s+/g, "-")}`}
                   className="text-gray-400 hover:text-red-500 transition-colors"
                 >
                   {item}
