@@ -114,7 +114,7 @@ const Footer = () => {
               Newsletter
             </h3>
             <p className="text-gray-300">
-              Stay updated with our latest offers and updates
+              Stay updated with our latest best offers and  updates
             </p>
             <form onSubmit={handleSubscribe} className="space-y-4">
               <div className="relative group">
