@@ -17,22 +17,21 @@ const Home = () => {
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/80">
           <Navbar />
-          
-          {/* Logo and Search Section */}
+
           <div className="max-w-7xl mx-auto px-4 pt-32">
             <div className="flex flex-col items-center">
               <img
-                src="https://maps.app.goo.gl/t8cW96NwTfyzUGxe6"
+                src="https://res.cloudinary.com/dobzhyq0g/image/upload/v1744701079/uploads/doa614bvyzmxgiwmven6.jpg"
                 alt="Store Logo"
                 className="w-40 h-40 mb-12 rounded-full shadow-2xl shadow-red-500/20"
               />
               <h1 className="text-5xl md:text-6xl font-bold text-white mb-6 text-center uppercase">
-            
                 Hindustan battery sindagi
               </h1>
-              <p className="text-xl text-gray-300 mb-12 text-center max-w-2xl">
-            
-                Discover premium batteries for every need - from automotive to industrial solutions
+              <p className="text-xl text-gray-300 mb-4 text-center max-w-2xl"></p>
+              <p className="text-lg text-gray-400 mb-12 text-center max-w-2xl">
+                Wholesale prices available for every orders. Contact us for more
+                details!
               </p>
               <div className="w-full max-w-2xl">
                 <div className="relative">
@@ -92,17 +91,13 @@ const Home = () => {
           ))}
         </div>
       </section> */}
-       <FeatureProducts />
-
-      
+      <FeatureProducts />
 
       {/* Brands Section */}
       <BrandsSection />
 
       {/* Advertisement Grid */}
       <AdvertisementGrid />
-
-      
     </div>
   );
 };
