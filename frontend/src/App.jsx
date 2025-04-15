@@ -1,10 +1,9 @@
+import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
 import Products from "./Components/Products";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./Components/Navbar";
 import Footer from "./Components/Footer";
 import Brands from "./Components/Brands";
 import Home from "./Pages/Home";
-// import About from "./Pages/About";
 import Login from "./Pages/Login";
 import Register from "./Pages/Register";
 import Admindash from "./Pages/Admindash";
@@ -17,20 +16,24 @@ import ContactUs from "./Components/ContactUs";
 import Exide from './Components/BrandPages/Exide';
 import Amaron from './Components/BrandPages/Amaron';
 
-function App() {
+function AppWrapper() {
+  const location = useLocation();
+  const hideNavbarRoutes = ['/login', '/register'];
+
+  const shouldHideNavbar = hideNavbarRoutes.includes(location.pathname);
+
   return (
-    <Router>
-      <Navbar />
+    <>
+      {!shouldHideNavbar && <Navbar />}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} /> {/* Add this line */}
+        <Route path="/register" element={<Register />} />
 
         {/* Protected Routes */}
         <Route element={<PrivateRoute />}>
           <Route element={<AdminRoute />}>
             <Route path="/admin" element={<Admindash />} />
-            {/* <Route path="/about" element={<About />} /> */}
           </Route>
           <Route element={<UserRoute />}>
             <Route path="/user" element={<Userdash />} />
@@ -43,9 +46,16 @@ function App() {
             <Route path="/brands/amaron" element={<Amaron />} />
           </Route>
         </Route>
-
       </Routes>
-        <Footer />
+      <Footer />
+    </>
+  );
+}
+
+function App() {
+  return (
+    <Router>
+      <AppWrapper />
     </Router>
   );
 }
